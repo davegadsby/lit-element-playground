@@ -1,5 +1,4 @@
-const webpackConfig = require("./webpack.config");
-delete webpackConfig.entry;
+const path = require("path");
 
 module.exports = function (config) {
   config.set({
@@ -18,7 +17,29 @@ module.exports = function (config) {
     files: [
       "test/index.ts"
     ],
-    webpack: webpackConfig,
+    webpack:  {
+      resolve: {
+        extensions: ['.js', '.ts', '.json']
+      },
+      module: {
+        rules: [
+          {
+            test: /\.ts$/,
+            use: 'ts-loader'
+          },
+          {
+            test: /\.ts$/,
+            exclude: [ /node_modules/, path.resolve(__dirname, "test"), /\.spec.ts$/ ],
+            enforce: 'post',
+            use: {
+              loader: 'istanbul-instrumenter-loader',
+              options: { esModules: true }
+            }
+          },
+
+        ]
+      }
+    },
     client: {
       jasmine: {
         random: false
@@ -40,7 +61,7 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml', 'coverage'],
+    reporters: ['coverage', 'progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

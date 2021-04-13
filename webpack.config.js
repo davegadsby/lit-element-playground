@@ -14,17 +14,10 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader'
-      },
-      {
-        test: /\.ts$/,
-        exclude: [ path.resolve(__dirname, "test") ],
-        enforce: 'post',
         use: {
-          loader: 'istanbul-instrumenter-loader',
-          options: { esModules: true }
+          loader: 'ts-loader',
         }
-      }
+      },
     ],
   }
 };
