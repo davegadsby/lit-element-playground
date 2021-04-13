@@ -3,9 +3,7 @@ export class Pure {
 
     private jan = false
 
-    constructor() {
-        console.log('hmmm');
-    }
+    constructor() {}
 
     NotCalled() {
         this.jan = false;
@@ -14,7 +12,7 @@ export class Pure {
     NotCalled2() {
         this.jan = false;
     }
-    
+
     setJan(bool: boolean) {
         this.jan = bool;
     }

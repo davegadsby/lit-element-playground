@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require("fs");
 
 module.exports = function (config) {
   config.set({
@@ -10,6 +11,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
+      require('string-replace-loader'),
     ],
     preprocessors: {
       "test/index.ts": ["webpack"],
@@ -23,6 +25,15 @@ module.exports = function (config) {
       },
       module: {
         rules: [
+          {
+            test: /\.ts$/,
+            loader: 'string-replace-loader',
+            options: {
+              search: 'file-replace!!(.*)!!',
+              replace: (match, p1, ) => fs.readFileSync(path.resolve(__dirname, p1), 'utf8').replace(/\r?\n|\r/g, " "),
+              flags: 'g'
+            }
+          },
           {
             test: /\.ts$/,
             use: 'ts-loader'

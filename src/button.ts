@@ -1,16 +1,26 @@
-import {html, customElement, LitElement, property} from "lit-element";
+import {html, customElement, LitElement, property, css } from "lit-element";
+
 
 @customElement('awesome-button')
 export class Button extends LitElement {
 
+
     @property()
     buttonText = '';
 
-    render() {
-        return html`<button id="custom-button" @click="${() => {}}">${this.buttonText}</button>`;
+    constructor() {
+        super();
     }
 
-    hmm() {
-    	console.log('shouldi');
+    static get styles() {
+        return css`file-replace!!src/button.css!!`;
+    }
+
+    render() {
+        return html`file-replace!!src/button.html!!`;
+    }
+
+    clicked() {
+    	console.log('clicked');
     }
 }

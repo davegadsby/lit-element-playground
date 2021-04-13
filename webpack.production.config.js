@@ -13,8 +13,19 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader'
-      }
-    ]
+        loader: 'string-replace-loader',
+        options: {
+          search: 'file-replace!!(.*)!!',
+          replace: (match, p1, ) => fs.readFileSync(path.resolve(__dirname, p1), 'utf8').replace(/\r?\n|\r/g, " "),
+          flags: 'g'
+        }
+      },
+      {
+        test: /\.ts$/,
+        use: {
+          loader: 'ts-loader',
+        }
+      },
+    ],
   }
 }
