@@ -4,7 +4,6 @@ import {html, customElement, LitElement, property, css } from "lit-element";
 @customElement('awesome-button')
 export class Button extends LitElement {
 
-
     @property()
     buttonText = '';
 

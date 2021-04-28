@@ -10,6 +10,9 @@ module.exports = {
     extensions: ['.js', '.ts', '.json']
   },
   devtool: "inline-source-map",
+  devServer: {
+    contentBase: './',
+  },
   module: {
     rules: [
       {
