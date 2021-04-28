@@ -1,7 +1,7 @@
 {
-  "name": "tscoverage",
+  "name": "lit-element-micro-dev-bootstrap",
   "version": "2.2.0",
-  "description": "Testing Karma+Typescript with full coverage",
+  "description": "A micro Boostrap, Starter, Boilerplate that includes many quality features",
   "main": "index.js",
   "scripts": {
     "build-prod": "NODE_ENV=production webpack --config ./webpack.production.config.js",
