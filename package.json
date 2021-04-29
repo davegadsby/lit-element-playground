@@ -7,6 +7,7 @@
     "build-prod": "NODE_ENV=production webpack --config ./webpack.production.config.js",
     "build": "webpack --config ./webpack.config.js",
     "test": "karma start karma.conf.js",
+    "lint": "eslint \"**/*.{js,ts}\"",
     "start": "webpack serve --open"
   },
   "author": "",
@@ -17,6 +18,10 @@
   "devDependencies": {
     "@types/jasmine": "^3.6.9",
     "@types/mocha": "^8.2.0",
+    "@types/webpack-env": "^1.16.0",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
+    "eslint": "^7.25.0",
     "istanbul-instrumenter-loader": "^3.0.1",
     "karma": "^6.1.0",
     "karma-chrome-launcher": "^3.1.0",

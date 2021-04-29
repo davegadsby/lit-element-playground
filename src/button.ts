@@ -1,4 +1,4 @@
-import {html, customElement, LitElement, property, css } from "lit-element";
+import { html, customElement, LitElement, property, css } from 'lit-element';
 
 
 @customElement('awesome-button')
@@ -20,6 +20,6 @@ export class Button extends LitElement {
     }
 
     clicked() {
-    	console.log('clicked');
+        console.log('clicked');
     }
 }
