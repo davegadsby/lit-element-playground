@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <title>Hello!</title>
-     <script src="/bundle.js"></script>
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <title>Hello!</title>
+  <script src="/bundle.js"></script>
+</head>
+
+<body>
 
   <simple-card title="Simple Card">
     <p>Content for a simple card</p>
@@ -18,13 +20,26 @@
     <p>Card with a custom header</p>
   </simple-card>
 
-    <!-- plot-card example use-->
+  <!-- plot-card example use-->
   <plot-card title="This is a plot card">
-    <div slot="plot"></div>
-    <svg slot="toolbar" height="10" width="10">
-        <circle cx="5" cy="5" r="5" fill="#3a863d" />
+
+    <svg slot="plot" height="100" width="100%">
+      <rect fill="#666" height="100" width="100%" rx="5" />
     </svg>
-  </section>
+
+    <ul slot="toolbar"> 
+      <svg height="24" width="24">
+        <rect  height="24" width="24"  fill="#666" />
+      </svg>
+      <svg height="24" width="24">
+        <rect  height="24" width="24"  fill="#666" />
+      </svg>
+      <svg height="24" width="24">
+        <rect  height="24" width="24"  fill="#666" />
+      </svg>
+    </ul>
+    
   </plot-card>
-  </body>
+</body>
+
 </html>
