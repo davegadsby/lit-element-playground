@@ -3,12 +3,28 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <title>Hello!</title>
      <script src="/bundle.js"></script>
   </head>
   <body>
-	<awesome-button buttonText="hello world">
-      <span> and slot</span>
-    </awesome-button>
+
+  <simple-card title="Simple Card">
+    <p>Content for a simple card</p>
+  </simple-card>
+
+  <simple-card>
+    <h3 slot="header">Custom Header</h3>
+    <p>Card with a custom header</p>
+  </simple-card>
+
+    <!-- plot-card example use-->
+  <plot-card title="This is a plot card">
+    <div slot="plot"></div>
+    <svg slot="toolbar" height="10" width="10">
+        <circle cx="5" cy="5" r="5" fill="#3a863d" />
+    </svg>
+  </section>
+  </plot-card>
   </body>
 </html>

@@ -1,0 +1,10 @@
+<!-- plot-card component-->
+    <simple-card .title="${this.title}">
+        
+        <slot name="plot"></slot>
+
+        <nav class="card-plot__toolbar">
+            <slot name="toolbar"></slot>
+        </nav>
+        
+    </simple-card>
